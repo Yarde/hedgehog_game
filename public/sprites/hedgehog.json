@@ -1,5 +1,5 @@
 {
-    "imageURL": "./img/jez.png",
+    "imageURL": "./img/characters.png",
     
     "frames": [
         {
@@ -16,25 +16,69 @@
         },
         {
             "name": "run-3",
+            "rect": [384, 0, 128, 128]
+        },
+        {
+            "name": "run-4",
+            "rect": [512, 0, 128, 128]
+        },
+        {
+            "name": "jump-1",
             "rect": [0, 128, 128, 128]
         },
         {
-            "name": "break",
+            "name": "jump-2",
             "rect": [128, 128, 128, 128]
         },
         {
-            "name": "jump",
-            "rect": [256, 128, 128, 128]
+            "name": "jump-4",
+            "rect": [384, 128, 128, 128]
+        },
+        {
+            "name": "jump-5",
+            "rect": [512, 128, 128, 128]
+        },
+        {
+            "name": "jump-6",
+            "rect": [0, 256, 128, 128]
+        },
+        {
+            "name": "jump-8",
+            "rect": [256, 256, 128, 128]
+        },
+        {
+            "name": "jump-9",
+            "rect": [384, 256, 128, 128]
+        },
+        {
+            "name": "break",
+            "rect": [384, 128, 128, 128]
         }
     ],
     "animations": [
         {
             "name": "run",
-            "frameLen": 64,
+            "frameLen": 128,
             "frames": [
                 "run-1",
                 "run-2",
-                "run-3"
+                "run-3",
+                "run-4"
+            ]
+        },
+        {
+            "name": "jump",
+            "frameLen": 128,
+            "frames": [
+                "jump-1",
+                "jump-2",
+                "jump-8",
+                "jump-4",
+                "jump-5",
+                "jump-6",
+                "jump-4",
+                "jump-8",
+                "jump-9"
             ]
         }
     ]

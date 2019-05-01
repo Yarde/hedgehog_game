@@ -1,0 +1,10 @@
+{
+    "imageURL": "./img/characters.png",
+
+    "frames": [
+        {
+            "name": "apple",
+            "rect": [0, 512, 64, 64]
+        }
+    ]
+}

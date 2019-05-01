@@ -1,16 +1,154 @@
 {
-    "imageURL": "./img/ziem.jpg",
+    "imageURL": "./img/tiles.png",
     "tileW": 128,
     "tileH": 128, 
 
     "tiles": [
         {
             "name": "sky",
-            "index": [0,1]
+            "index": [3,2]
+        },
+        {
+            "name": "dirt",
+            "index": [1,0]
         },
         {
             "name": "ground",
+            "index": [5,3]
+        },
+        {
+            "name": "ground-l",
+            "index": [5,2]
+        },
+        {
+            "name": "ground-r",
+            "index": [5,1]
+        },
+        {
+            "name": "ground-leafless",
+            "index": [5,0]
+        },
+        {
+            "name": "water-down",
+            "index": [3,4]
+        },
+        {
+            "name": "water-down2",
+            "index": [4,4]
+        },
+        {
+            "name": "water-up",
+            "index": [1,4]
+        },
+        {
+            "name": "water-up2",
+            "index": [2,4]
+        },
+        {
+            "name": "grass",
+            "index": [0,4]
+        },
+        {
+            "name": "flower",
+            "index": [1,2]
+        },
+        {
+            "name": "fence-tl",
+            "index": [4,2]
+        },
+        {
+            "name": "fence-tr",
+            "index": [0,3]
+        },
+        {
+            "name": "fence-dl",
+            "index": [1,3]
+        },
+        {
+            "name": "fence-dr",
+            "index": [2,3]
+        },
+        {
+            "name": "bush-l",
+            "index": [4,1]
+        },
+        {
+            "name": "bush-r",
+            "index": [0,2]
+        },
+        {
+            "name": "box-l",
+            "index": [3,3]
+        },
+        {
+            "name": "box-r",
+            "index": [4,3]
+        },
+        {
+            "name": "tree-1",
             "index": [0,0]
+        },
+        {
+            "name": "tree-2",
+            "index": [1,0]
+        },
+        {
+            "name": "tree-2x",
+            "index": [2,0]
+        },
+        {
+            "name": "tree-3",
+            "index": [3,0]
+        },
+        {
+            "name": "tree-4",
+            "index": [4,0]
+        },
+        {
+            "name": "tree-5",
+            "index": [0,1]
+        },
+        {
+            "name": "tree-6",
+            "index": [1,1]
+        },
+        {
+            "name": "tree-7",
+            "index": [2,1]
+        },
+        {
+            "name": "tree-8",
+            "index": [3,1]
+        },
+        {
+            "name": "brick",
+            "index": [5,4]
+        }
+    ],
+    "animations": [
+        {
+            "name": "water-up",
+            "frameLen": 0.2,
+            "frames": [
+                "water-up",
+                "water-up2"
+            ]
+        },
+        {
+            "name": "water-down",
+            "frameLen": 0.2,
+            "frames": [
+                "water-down",
+                "water-down2"
+            ]
+        },
+        {
+            "name": "tree-2",
+            "frameLen": 1,
+            "frames": [
+                "tree-2",
+                "tree-2x"
+            ]
         }
     ]
 }

@@ -1,18 +1,18 @@
 {
-    "imageURL": "./img/characters.gif",
-
+    "imageURL": "./img/characters.png",
+        
     "frames": [
         {
             "name": "walk-1",
-            "rect": [296, 187, 16, 16]
+            "rect": [384, 384, 128, 128]
         },
         {
             "name": "walk-2",
-            "rect": [315, 187, 16, 16]
+            "rect": [512, 384, 128, 128]
         },
         {
-            "name": "flat",
-            "rect": [277, 187, 16, 16]
+            "name": "hiding",
+            "rect": [512, 256, 128, 128]
         }
     ],
 
@@ -23,6 +23,13 @@
             "frames": [
                 "walk-1",
                 "walk-2"
+            ]
+        },
+        {
+            "name": "wake",
+            "frameLen": 0.15,
+            "frames": [
+                "hiding"
             ]
         }
     ]

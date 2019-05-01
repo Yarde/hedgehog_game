@@ -37,7 +37,6 @@ export function createLevelLoader(entityFactory) {
         .then(levelSpec => Promise.all([
             levelSpec,
             loadSpriteSheet(levelSpec.spriteSheet),
-            console.log(levelSpec),
         ]))
         .then(([levelSpec, backgroundSprites]) => {
             const level = new Level();

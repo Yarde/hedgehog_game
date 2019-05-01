@@ -4,7 +4,7 @@ export default class PendulumMove extends Trait {
     constructor() {
         super('pendulumMove');
         this.enabled = true;
-        this.speed = -30;
+        this.speed = -100;
     }
 
     obstruct(entity, side) {

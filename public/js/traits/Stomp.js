@@ -17,7 +17,7 @@ export default class Stomp extends Trait {
         if (!them.killable || them.killable.dead){
             return;
         } 
-        if (us.vel.y > them.vel.y) {
+        if (us.vel.y > them.vel.y && them.solid) {
             this.bounce(us, them);
             this.onStomp(us, them);
         }

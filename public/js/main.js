@@ -33,7 +33,7 @@ async function main(canvas){
     window.playerEnv = createPlayerEnv(hedgehog);
     level.entities.add(playerEnv);
 
-    //level.comp.layers.push(createDashboardLayer(font, playerEnv));
+    level.comp.layers.push(createDashboardLayer(font, playerEnv));
     //level.comp.layers.push(createCollisionLayer(level));
 
     const input = setupKeyboard(hedgehog);

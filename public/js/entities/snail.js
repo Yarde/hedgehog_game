@@ -5,9 +5,9 @@ import {loadSpriteSheet} from '../loaders.js';
 import Solid from '../traits/Solid.js';
 import Physics from '../traits/Physics.js';
 
-export function loadEnemy2() {
-    return loadSpriteSheet('enemy2')
-    .then(createEnemy2Factory);
+export function loadSnail() {
+    return loadSpriteSheet('snail')
+    .then(createSnailFactory);
 }
 
 const STATE_WALKING = Symbol('walking');
@@ -20,7 +20,7 @@ class Behavior extends Trait {
         this.hideTime = 0;
         this.hideDuration = 5;
         this.walkSpeed = null;
-        this.panicSpeed = 300;
+        this.panicSpeed = 800;
         this.state = STATE_WALKING;
     }
 
@@ -31,7 +31,7 @@ class Behavior extends Trait {
         if (them.killable.dead) {
             return;
         }
-        if (us.pos.y > 200) {
+        if (us.pos.y > 1000) {
             us.killable.kill();
         }
         if (them.stomp) {
@@ -110,42 +110,42 @@ class Behavior extends Trait {
 }
 
 
-function createEnemy2Factory(sprite) {
+function createSnailFactory(sprite) {
     const walkAnim = sprite.animations.get('walk');
     const wakeAnim = sprite.animations.get('wake');
 
-    function routeAnim(enemy2) {
-        if (enemy2.behavior.state === STATE_HIDING) {
-            if (enemy2.behavior.hideTime > 3) {
-                return wakeAnim(enemy2.behavior.hideTime);
+    function routeAnim(snail) {
+        if (snail.behavior.state === STATE_HIDING) {
+            if (snail.behavior.hideTime > 3) {
+                return wakeAnim(snail.behavior.hideTime);
             }
             return 'hiding';
         }
 
-        if (enemy2.behavior.state === STATE_PANIC) {
+        if (snail.behavior.state === STATE_PANIC) {
             return 'hiding';
         }
 
-        return walkAnim(enemy2.lifetime);
+        return walkAnim(snail.lifetime);
     }
 
-    function drawEnemy2(context) {
+    function drawSnail(context) {
         sprite.draw(routeAnim(this), context, 0, 0, this.vel.x < 0);
     }
 
-    return function createEnemy2() {
-        const enemy2 = new Entity();
-        enemy2.size.set(16, 16);
-        enemy2.offset.y = 8;
+    return function createSnail() {
+        const snail = new Entity();
+        snail.size.set(128, 128);
+        snail.offset.y = 0;
 
-        enemy2.addTrait(new PendulumMove());
-        enemy2.addTrait(new Killable());
-        enemy2.addTrait(new Behavior());
-        enemy2.addTrait(new Solid());
-        enemy2.addTrait(new Physics());
+        snail.addTrait(new PendulumMove());
+        snail.addTrait(new Killable());
+        snail.addTrait(new Behavior());
+        snail.addTrait(new Solid());
+        snail.addTrait(new Physics());
 
-        enemy2.draw = drawEnemy2;
+        snail.draw = drawSnail;
 
-        return enemy2;
+        return snail;
     };
 }

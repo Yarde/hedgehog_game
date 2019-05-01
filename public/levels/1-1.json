@@ -336,31 +336,31 @@
     ],
     "entities": [
         {
-            "name": "enemy1",
+            "name": "pumpkin",
             "pos": [260, 0]
         },
         {
-            "name": "enemy2",
+            "name": "snail",
             "pos": [150, 190]
         },
         {
-            "name": "enemy1",
+            "name": "pumpkin",
             "pos": [560, 0]
         },
         {
-            "name": "enemy2",
+            "name": "snail",
             "pos": [230, 190]
         },
         {
-            "name": "enemy1",
+            "name": "pumpkin",
             "pos": [460, 0]
         },
         {
-            "name": "enemy2",
+            "name": "snail",
             "pos": [1060, 190]
         },
         {
-            "name": "enemy1",
+            "name": "pumpkin",
             "pos": [760, 0]
         }
         

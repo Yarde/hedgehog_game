@@ -17,12 +17,13 @@ export function loadHedgehog() {
 
 function createHedgehogFactory(sprite){
     const runAnimation = sprite.animations.get('run');
+    const jumpAnimation = sprite.animations.get('jump');
     function routeFrame(hedgehog){
-        if (hedgehog.pos.y > 2000) {
+        if (hedgehog.pos.y > 1000) {
             hedgehog.killable.kill();
         }
         if(hedgehog.jump.falling){
-            return 'jump';
+            return jumpAnimation(hedgehog.go.distance);            
         }
         if(hedgehog.go.distance > 0){
             if((hedgehog.vel.x > 0 && hedgehog.go.dir < 0) || (hedgehog.vel.x < 0 && hedgehog.go.dir > 0)){
@@ -43,7 +44,9 @@ function createHedgehogFactory(sprite){
 
     return function createHedgehog(){
         const hedgehog = new Entity();
-        hedgehog.size.set(128, 128);
+        hedgehog.size.set(100, 100);
+        hedgehog.offset.x = 14;
+        hedgehog.offset.y = 28;
     
         hedgehog.addTrait(new Go());
         hedgehog.addTrait(new Jump());

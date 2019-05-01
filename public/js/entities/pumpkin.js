@@ -5,22 +5,21 @@ import {loadSpriteSheet} from '../loaders.js';
 import Solid from '../traits/Solid.js';
 import Physics from '../traits/Physics.js';
 
-export function loadEnemy1() {
-    return loadSpriteSheet('enemy1')
-    .then(createEnemy1Factory);
+export function loadPumpkin() {
+    return loadSpriteSheet('pumpkin')
+    .then(createPumpkinFactory);
 }
 
 class Behavior extends Trait {
     constructor() {
         super('behavior');
-        this.id = 1;
     }
 
     collides(us, them) {
         if (us.killable.dead) {
             return;
         }
-        if (us.pos.y > 200) {
+        if (us.pos.y > 1000) {
             us.killable.kill();
         }
         if (them.stomp) {
@@ -36,33 +35,33 @@ class Behavior extends Trait {
 }
 
 
-function createEnemy1Factory(sprite) {
+function createPumpkinFactory(sprite) {
     const moveAnimation = sprite.animations.get('walk');
 
-    function routeAnimation(enemy1) {
-        if (enemy1.killable.dead) {
+    function routeAnimation(pumpkin) {
+        if (pumpkin.killable.dead) {
             return 'flat';
         }
 
-        return moveAnimation(enemy1.lifetime);
+        return moveAnimation(pumpkin.lifetime);
     }
 
-    function drawEnemy1(context) {
+    function drawPumpkin(context) {
         sprite.draw(routeAnimation(this), context, 0, 0);
     }
 
-    return function createEnemy1() {
-        const enemy1 = new Entity();
-        enemy1.size.set(16, 16);
+    return function createPumpkin() {
+        const pumpkin = new Entity();
+        pumpkin.size.set(128, 128);
 
-        enemy1.addTrait(new PendulumMove());
-        enemy1.addTrait(new Behavior());
-        enemy1.addTrait(new Killable());
-        enemy1.addTrait(new Solid());
-        enemy1.addTrait(new Physics());
+        pumpkin.addTrait(new PendulumMove());
+        pumpkin.addTrait(new Behavior());
+        pumpkin.addTrait(new Killable());
+        pumpkin.addTrait(new Solid());
+        pumpkin.addTrait(new Physics());
 
-        enemy1.draw = drawEnemy1;
+        pumpkin.draw = drawPumpkin;
 
-        return enemy1;
+        return pumpkin;
     };
 }

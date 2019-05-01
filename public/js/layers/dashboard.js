@@ -14,7 +14,7 @@ export function createDashboardLayer(font, playerEnv) {
         //font.print('WORLD', context, 152, LINE1);
         //font.print('1-1', context, 160, LINE2);
 
-        font.print('TIME', context, 208, LINE1);
-        font.print(time.toFixed().toString().padStart(3, '0'), context, 216, LINE2);
+        font.print('TIME', context, 2000, LINE1);
+        font.print(time.toFixed().toString().padStart(3, '0'), context, 2005, LINE2);
     };
 }

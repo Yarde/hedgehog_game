@@ -49,7 +49,7 @@ export default class SpriteSheet {
         context.drawImage(buffer, x, y);
     }
 
-    drawAnimation(name, context, x, y, distance){
+    drawAnimation(name, context, x, y, distance){             
         const animation = this.animations.get(name);
         this.drawTile(animation(distance), context, x, y);
     }

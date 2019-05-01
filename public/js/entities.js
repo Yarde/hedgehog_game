@@ -1,6 +1,7 @@
 import {loadHedgehog} from './entities/hedgehog.js';
-import {loadEnemy1} from './entities/enemy1.js';
-import {loadEnemy2} from './entities/enemy2.js';
+import {loadPumpkin} from './entities/pumpkin.js';
+import {loadSnail} from './entities/snail.js';
+import {loadApple} from './entities/apple.js';
 
 export function loadEntities() {
     const entityFactories = {};
@@ -12,8 +13,9 @@ export function loadEntities() {
 
     return Promise.all([
         loadHedgehog().then(addAs('hedgehog')),
-        loadEnemy1().then(addAs('enemy1')),
-        loadEnemy2().then(addAs('enemy2')),
+        loadPumpkin().then(addAs('pumpkin')),
+        loadSnail().then(addAs('snail')),
+        loadApple().then(addAs('apple')),
     ])
     .then(() => entityFactories);
 }
