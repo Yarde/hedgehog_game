@@ -1,0 +1,16 @@
+{
+    "imageURL": "./img/ziem.jpg",
+    "tileW": 128,
+    "tileH": 128, 
+
+    "tiles": [
+        {
+            "name": "sky",
+            "index": [0,1]
+        },
+        {
+            "name": "ground",
+            "index": [0,0]
+        }
+    ]
+}
