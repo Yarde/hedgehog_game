@@ -7,9 +7,6 @@ import Physics from '../traits/Physics.js';
 import Killable from '../traits/Killable.js';
 import {loadSpriteSheet} from '../loaders.js';
 
-const FAST_DRAG = 1/5000;
-const SLOW_DRAG = 1/1000;
-
 export function loadHedgehog() {
     return loadSpriteSheet('hedgehog')
     .then(createHedgehogFactory);
@@ -18,9 +15,27 @@ export function loadHedgehog() {
 function createHedgehogFactory(sprite){
     const runAnimation = sprite.animations.get('run');
     const jumpAnimation = sprite.animations.get('jump');
+    const drownAnimation = sprite.animations.get('drown');
     function routeFrame(hedgehog){
-        if (hedgehog.pos.y > 1000) {
-            hedgehog.killable.kill();
+        console.log(hedgehog.pos.x);
+        if (hedgehog.pos.y > 848){
+            hedgehog.killable.drown();
+        }
+        if (hedgehog.killable.drowning) {
+            hedgehog.vel.x = 0;
+            if(hedgehog.pos.y > 848){
+                hedgehog.dir = 0;
+                hedgehog.vel.y = 150;
+                hedgehog.friction = 10;
+                return drownAnimation(hedgehog.pos.y);
+            }
+            return 'drown-3';
+        }
+        if(hedgehog.killable.dead){
+            hedgehog.vel.y = 0;
+            hedgehog.vel.x = 0;
+            hedgehog.dir = 0;
+            return 'dead';
         }
         if(hedgehog.jump.falling){
             return jumpAnimation(hedgehog.go.distance);            
@@ -33,10 +48,6 @@ function createHedgehogFactory(sprite){
         }
         return 'idle';
     }    
-    
-    function setTurboState(turboOn){
-        this.go.dragFactor = turboOn ? FAST_DRAG : SLOW_DRAG;
-    }
 
     function drawHedgehog(context) {
         sprite.draw(routeFrame(this), context, 0, 0, this.go.heading < 0);
@@ -54,8 +65,7 @@ function createHedgehogFactory(sprite){
         hedgehog.addTrait(new Killable());
         hedgehog.addTrait(new Solid());
         hedgehog.addTrait(new Physics());
-        hedgehog.killable.removeAfter = 0;
-        hedgehog.turbo = setTurboState;
+        hedgehog.killable.removeAfter = 2;
         hedgehog.draw = drawHedgehog;
     
         return hedgehog;

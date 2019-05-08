@@ -18,7 +18,6 @@ class Behavior extends Trait {
         }
         if (them.stomp) {
             us.killable.kill();
-            them.stomp.
             window.playerEnv.playerController.givePoints(200);
         }
     }

@@ -20,16 +20,13 @@ export default class PlayerController extends Trait {
         this.score += n;
     }
 
+    addPlayer(level){
+        this.player.killable.revive();
+        this.player.pos.set(this.checkpoint.x, this.checkpoint.y);
+        level.entities.add(this.player);
+    }
+
     update(entity, deltaTime, level) {
-        if (!level.entities.has(this.player)) {
-            this.player.killable.deadTime += deltaTime;
-            if(this.player.killable.deadTime > 2){
-                this.player.killable.revive();
-                this.player.pos.set(this.checkpoint.x, this.checkpoint.y);
-                level.entities.add(this.player);
-            }   
-        }else{
-            this.time += deltaTime;
-        }
+        this.time += deltaTime;
     }
 }

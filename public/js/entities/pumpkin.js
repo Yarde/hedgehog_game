@@ -42,7 +42,6 @@ function createPumpkinFactory(sprite) {
         if (pumpkin.killable.dead) {
             return 'flat';
         }
-
         return moveAnimation(pumpkin.lifetime);
     }
 

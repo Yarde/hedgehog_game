@@ -4,6 +4,7 @@ export default class Killable extends Trait {
     constructor() {
         super('killable');
         this.dead = false;
+        this.drowning = false;
         this.deadTime = 0;
         this.removeAfter = 4;
         this.scoreForKill = function(){}
@@ -17,6 +18,11 @@ export default class Killable extends Trait {
         this.dead = false;
         this.deadTime = 0;
         window.playerEnv.playerController.score = 0;
+    }
+
+    drown(){
+        this.kill();
+        this.drowning = true;
     }
 
     update(entity, deltaTime, level){

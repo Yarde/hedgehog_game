@@ -11,10 +11,6 @@ export function setupKeyboard(hedgehog) {
         }
     });
 
-    // input.addMapping('KeyS', keyState => {
-    //     hedgehog.turbo(keyState);
-    // });
-
     input.addMapping('KeyD', keyState => {
         hedgehog.go.dir += keyState ? 1 : -1;
     });
@@ -22,6 +18,23 @@ export function setupKeyboard(hedgehog) {
     input.addMapping('KeyA', keyState => {
         hedgehog.go.dir += -keyState ? -1 : 1;
     });
+
+    input.addMapping('ArrowUp', keyState => {
+        if (keyState) {
+            hedgehog.jump.start();
+        } else {
+            hedgehog.jump.cancel();
+        }
+    });
+
+    input.addMapping('ArrowRight', keyState => {
+        hedgehog.go.dir += keyState ? 1 : -1;
+    });
+
+    input.addMapping('ArrowLeft', keyState => {
+        hedgehog.go.dir += -keyState ? -1 : 1;
+    });
+
 
     return input;
 }

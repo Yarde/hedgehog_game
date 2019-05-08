@@ -1,0 +1,29 @@
+{
+    "imageURL": "./img/characters.png",
+
+    "frames": [
+        {
+            "name": "bottom",
+            "rect": [768, 0, 128, 128]
+        },
+        {
+            "name": "up-1",
+            "rect": [768, 128, 128, 128]
+        },
+        {
+            "name": "up-2",
+            "rect": [768, 256, 128, 128]
+        }
+    ],
+
+    "animations": [
+        {
+            "name": "wave",
+            "frameLen": 0.5,
+            "frames": [
+                "up-1",
+                "up-2"
+            ]
+        }
+    ]
+}

@@ -1,7 +1,7 @@
 import {loadImage} from '../loaders.js';
 import SpriteSheet from '../SpriteSheet.js';
 
-const CHARS = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
+const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789.,;:$#\'!';
 
 class Font {
     constructor(sprites, size) {
@@ -22,7 +22,7 @@ export function loadFont() {
     .then(image => {
         const fontSprite = new SpriteSheet(image);
 
-        const size = 8;
+        const size = 105;
         const rowLen = image.width;
         for (let [index, char] of [...CHARS].entries()) {
             const x = index * size % rowLen;

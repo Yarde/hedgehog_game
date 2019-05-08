@@ -2,8 +2,6 @@ export function createDashboardLayer(font, playerEnv) {
     const LINE1 = font.size;
     const LINE2 = font.size * 2;
 
-    const coins = 0;
-
     return function drawDashboard(context) {
         const {score, time} = playerEnv.playerController;
         font.print('MARIO', context, 16, LINE1);
@@ -15,6 +13,6 @@ export function createDashboardLayer(font, playerEnv) {
         //font.print('1-1', context, 160, LINE2);
 
         font.print('TIME', context, 2000, LINE1);
-        font.print(time.toFixed().toString().padStart(3, '0'), context, 2005, LINE2);
+        font.print(time.toFixed().toString().padStart(4, '0'), context, 1005, LINE2);
     };
 }

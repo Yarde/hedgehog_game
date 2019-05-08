@@ -53,6 +53,22 @@
         {
             "name": "break",
             "rect": [384, 128, 128, 128]
+        },
+        {
+            "name": "dead",
+            "rect": [256, 128, 128, 128]
+        },
+        {
+            "name": "drown-1",
+            "rect": [128, 512, 128, 128]
+        },
+        {
+            "name": "drown-2",
+            "rect": [256, 512, 128, 128]
+        },
+        {
+            "name": "drown-3",
+            "rect": [384, 512, 128, 128]
         }
     ],
     "animations": [
@@ -64,6 +80,14 @@
                 "run-2",
                 "run-3",
                 "run-4"
+            ]
+        },
+        {
+            "name": "drown",
+            "frameLen": 32,
+            "frames": [
+                "drown-1",
+                "drown-2"
             ]
         },
         {

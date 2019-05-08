@@ -1,0 +1,22 @@
+{
+    "imageURL": "./img/characters.png",
+        
+    "frames": [
+        {
+            "name": "swim",
+            "rect": [640, 128, 128, 128]
+        },
+        {
+            "name": "jump-1",
+            "rect": [640, 256, 128, 128]
+        },
+        {
+            "name": "jump-2",
+            "rect": [640, 0, 128, 128]
+        },
+        {
+            "name": "jump-3",
+            "rect": [640, 384, 128, 128]
+        }
+    ]
+}
