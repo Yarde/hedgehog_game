@@ -1,18 +1,19 @@
 export function createDashboardLayer(font, playerEnv) {
-    const LINE1 = font.size;
-    const LINE2 = font.size * 2;
 
     return function drawDashboard(context) {
         const {score, time} = playerEnv.playerController;
-        font.print('MARIO', context, 16, LINE1);
-        font.print(score.toString().padStart(6, '0'), context, 16, LINE2);
-
+        context.font = "48px Comic Sans MS";
+        context.fillStyle = "white";
+        context.fillText("SCORE", 50, 64);
+        context.fillText("TIME", 1868, 64);
+        context.fillText(score.toString(), 50, 128);
+        context.fillText(time.toFixed().toString(), 1968, 128);
         //font.print('@x' + coins.toString().padStart(2, '0'), context, 96, LINE2);
 
         //font.print('WORLD', context, 152, LINE1);
         //font.print('1-1', context, 160, LINE2);
 
-        font.print('TIME', context, 2000, LINE1);
-        font.print(time.toFixed().toString().padStart(4, '0'), context, 1005, LINE2);
+        //font.print('TIME', context, 2000, LINE1);
+        //font.print(time.toFixed().toString().padStart(4, '0'), context, 1005, LINE2);
     };
 }

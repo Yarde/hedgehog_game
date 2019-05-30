@@ -40,7 +40,7 @@ async function load(context, camera){
     var input = setupKeyboard(hedgehog);
     input.listenTo(window);
     
-    //level.comp.layers.push(createDashboardLayer(font, playerEnv));
+    level.comp.layers.push(createDashboardLayer(context, playerEnv));
     //level.comp.layers.push(createCollisionLayer(level));
 
     const timer = new Timer(1/60);

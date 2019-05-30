@@ -3,7 +3,7 @@ import {Trait} from '../Entity.js';
 export default class Stomp extends Trait {
     constructor() {
         super('stomp');
-        this.bounceSpeed = 600;
+        this.bounceSpeed = 1200;
 
         this.onStomp = function(){}
     }

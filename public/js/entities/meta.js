@@ -20,32 +20,26 @@ class Behavior extends Trait {
                 window.lvl = '1-2';
                 return;
             }
-            if(window.lvl === '1-2'){
-                //window.lvl = '1-3';
-                return;
-            }
-            
         }
     }
 }
 
 
 function createMetaFactory(sprite) {
-    const moveAnimation = sprite.animations.get('walk');
+    const moveAnimation = sprite.animations.get('wave');
 
-    function routeAnimation() {
-        return 'bottom';
-        return moveAnimation();
+    function routeAnimation(meta) {
+        return moveAnimation(meta.lifetime);
     }
 
 
     function drawMeta(context) {
-        sprite.draw(routeAnimation(), context, 0, 0);
+        sprite.draw(routeAnimation(this), context, 0, 0);
     }
 
     return function createMeta() {
         const meta = new Entity();
-        meta.size.set(64, 64);
+        meta.size.set(64, 256);
         
         meta.addTrait(new Behavior());
         meta.draw = drawMeta;
