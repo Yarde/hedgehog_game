@@ -123,6 +123,10 @@
         {
             "name": "brick",
             "index": [5,4]
+        },
+        {
+            "name": "bucket",
+            "index": [6,0]
         }
     ],
     "animations": [

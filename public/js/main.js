@@ -3,7 +3,6 @@ import Timer from './Timer.js';
 import Entity from './Entity.js';
 import PlayerController from './traits/PlayerController.js';
 import {createLevelLoader} from './loaders/level.js';
-import {loadFont} from './loaders/font.js';
 import {loadEntities} from './entities.js';
 import {setupKeyboard} from './input.js';
 import {createDashboardLayer} from './layers/dashboard.js';
@@ -26,9 +25,8 @@ async function main(canvas){
 }
 
 async function load(context, camera){
-    const [entityFactory, font] = await Promise.all([
+    const [entityFactory] = await Promise.all([
         loadEntities(),
-        loadFont(),
     ]);
     const loadLevel = await createLevelLoader(entityFactory);
     var level = await loadLevel(lvl);

@@ -17,7 +17,11 @@ class Behavior extends Trait {
             them.killable.kill();
             them.killable.removeAfter = 0;
             if(window.lvl === '1-1'){
-                window.lvl = '1-2';
+                this.queue(() => window.lvl = '1-2');
+                return;
+            }
+            if(window.lvl === '1-2'){
+                this.queue(() => window.lvl = '1-3');
                 return;
             }
         }

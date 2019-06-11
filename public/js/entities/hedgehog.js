@@ -17,7 +17,6 @@ function createHedgehogFactory(sprite){
     const jumpAnimation = sprite.animations.get('jump');
     const drownAnimation = sprite.animations.get('drown');
     function routeFrame(hedgehog){
-        console.log(hedgehog.pos.x);
         if (hedgehog.pos.y > 848){
             hedgehog.killable.drown();
         }
