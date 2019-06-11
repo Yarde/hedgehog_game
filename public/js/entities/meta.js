@@ -20,10 +20,6 @@ class Behavior extends Trait {
                 this.queue(() => window.lvl = '1-2');
                 return;
             }
-            if(window.lvl === '1-2'){
-                this.queue(() => window.lvl = '1-3');
-                return;
-            }
         }
     }
 }
